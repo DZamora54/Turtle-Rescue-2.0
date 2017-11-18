@@ -2,16 +2,14 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const turtleSchema = new Schema({
-  title: { type: String, required: true },
-  author: { type: String, required: true },
-  synopsis: String,
-  date: { type: Date, default: Date.now },
   dateTimeReported: { type: Date, default: Date.now },
-  location: { type: String, required: true },
+  city: { type: String, required: true },
+  state: { type: String, required: true, maxlength: 2, minlength: 2 },
   coordinates: { type: String, required: true },
   comments: { type: String },
   userName: { type: String, required: true},
   phoneNumber: { type: String, required: true}
+  //add phoneNumber validation
   // should users be a separate collection?
 });
 
