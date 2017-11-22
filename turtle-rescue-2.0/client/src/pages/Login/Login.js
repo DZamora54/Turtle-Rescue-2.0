@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link }from 'react-router-dom';
 
-// import {auth} from '../../../../firebase.js';
-
 import {FormBtn, Input} from "../../components/Form"
 import withAuth from "../../components/Auth/withAuth";
 
@@ -21,7 +19,6 @@ export class Login extends React.Component {
   };
 
   handleChange = (event) => {
-    // event.preventDefault();
     const target = event.target;
     const value = target.value;
     const name = target.name;
@@ -53,18 +50,9 @@ export class Login extends React.Component {
 
   render() {
     console.log(this.props);
-    // const {from} = this.props.location.state || '/';
-    // const {redirectToReferrer, showErrors} = this.state;
 
     return (
      
-        // {redirectToReferrer && (
-        //   <Redirect to={from || '/report'}/>
-        // )}
-        // {from && (
-        //   <p>You must log in to view the page at <code>{from.pathname}</code></p>
-        // )}
-      
             <form>
               <label>
                 Email:
