@@ -5,6 +5,7 @@ import {FormBtn, Input} from "../../components/Form"
 import withAuth from "../../components/Auth/withAuth";
 
 
+
 export class Login extends React.Component {
   constructor(props) {
     super(props);
@@ -52,7 +53,7 @@ export class Login extends React.Component {
     console.log(this.props);
 
     return (
-     
+      <div>
             <form>
               <label>
                 Email:
@@ -81,6 +82,7 @@ export class Login extends React.Component {
               <FormBtn onClick={this.handleSubmit} type="submit">Sign In</FormBtn>
               or <Link to="/register">Create Account</Link>
             </form>
+          </div>
    
     );
   }

@@ -1,17 +1,17 @@
 import React from "react";
 import "./Navbar.css";
 
-const Navbar = () => (
+const Navbar = () => 
 	<nav id="navbar" className="nav-extended green">
 
 		{/* LOGO */}
 		<div className="nav-wrapper">
-			<a href="index.html" className="brand-logo"><img id="logo" src="assets/images/turtlehero-logo.png" alt="turtlehero Logo"></a>
+			<a href="index.html" className="brand-logo"><img id="logo" src="assets/images/turtlehero-logo.png" alt="turtlehero Logo"/></a>
 		</div>
 
 		{/* LOGOUT */}
 		<ul id="nav-top" className="right hide-on-med-and-down">
-			<li><a href="#"><i class="material-icons">exit_to_app</i></a></li>
+			<li><a href="/"><i class="material-icons">exit_to_app</i></a></li>
 		</ul>
 
 		{/* TABS */}
@@ -23,7 +23,7 @@ const Navbar = () => (
 			</ul>
 		</div>
 		
-	</nav>
-);
+	</nav>;
+
 
 export default Navbar;
