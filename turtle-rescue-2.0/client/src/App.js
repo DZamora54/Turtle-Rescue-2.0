@@ -6,6 +6,7 @@ import Auth from "./components/Auth/Auth";
 import Login from './pages/Login';
 // import {Register} from './components/Register';
 import Map from "./components/Map/Map";
+import Navbar from "./components/Navbar/Navbar";
 
 import './App.css';
 
@@ -25,14 +26,13 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Sea Turtle Rescue</h1>
         </header>
-       <Map />
       <Router>
         <Auth>
         <div className="wrapper">
-          
+        <Navbar />
           <Route exact path="/login" component={Login} />
           {/* <Route exact path="/register" component={Register} /> */}
-          {/* <Route exact path="/map" component={Map} /> */}
+           <Route exact path="/map" component={Map} />
           {/* <MatchWhenAuthorized path="/report" component={ReportForm} /> */}
         </div>
         </Auth>
