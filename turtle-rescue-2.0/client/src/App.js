@@ -4,7 +4,7 @@ import Auth from "./components/Auth/Auth";
 // import PropTypes from "prop-types";
 
 import Login from './pages/Login';
-// import {Register} from './components/Register';
+import Register from './pages/Register';
 import Map from "./components/Map/Map";
 import Navbar from "./components/Navbar/Navbar";
 
@@ -23,16 +23,14 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Sea Turtle Rescue</h1>
-        </header>
       <Router>
         <Auth>
         <div className="wrapper">
         <Navbar />
           <Route exact path="/login" component={Login} />
-          {/* <Route exact path="/register" component={Register} /> */}
+          <Route exact path="/register" component={Register} />
            <Route exact path="/map" component={Map} />
+           
           {/* <MatchWhenAuthorized path="/report" component={ReportForm} /> */}
         </div>
         </Auth>
