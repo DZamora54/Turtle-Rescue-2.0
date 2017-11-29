@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 const google = window.google;
+let map;
 
 const Cape = {
   lat: 41.710675,
