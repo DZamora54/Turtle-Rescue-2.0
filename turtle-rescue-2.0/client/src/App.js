@@ -27,11 +27,11 @@ class App extends Component {
         <Auth>
         <div className="wrapper">
         <Navbar />
-          <Route exact path="/login" component={Login} />
+          <Route exact path="/" component={Login} />
           <Route exact path="/register" component={Register} />
            <Route exact path="/map" component={Map} />
            
-          {/* <MatchWhenAuthorized path="/report" component={ReportForm} /> */}
+           {/* <MatchWhenAuthorized path="/report" component={ReportForm} />  */}
         </div>
         </Auth>
       </Router>
