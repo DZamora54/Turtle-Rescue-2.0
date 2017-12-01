@@ -82,7 +82,6 @@ export class Register extends React.Component {
                 errorText="Password is required"
                 // showError={showErrors && this.state.password.length <= 0}
                 onChange={e => this.setState({password: e.target.value})}
-                
               />
               </label>
               <label>
@@ -94,7 +93,6 @@ export class Register extends React.Component {
                 errorText="Phone Number is required"
                 // showError={showErrors && this.state.password.length <= 0}
                 onChange={e => this.setState({phoneNumber: e.target.value})}
-                
               />
               </label>
               <label>
@@ -106,7 +104,6 @@ export class Register extends React.Component {
                 errorText="Name is required"
                 // showError={showErrors && this.state.password.length <= 0}
                 onChange={e => this.setState({userName: e.target.value})}
-                
               />
               </label>
               <FormBtn onClick={this.handleSubmit} type="submit">Register</FormBtn>
