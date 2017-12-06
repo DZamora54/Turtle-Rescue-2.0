@@ -33,7 +33,7 @@ class FormModal extends React.Component {
             </span>
             {this.props.children}
             <form
-              action="https://formspree.io/umassturtlepower4@gmail.com"
+              action="https://formspree.io/umassturtlepower@gmail.com"
               method="POST"
             >
               <label>Name</label>
