@@ -7,7 +7,8 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Map from "./components/Map/Map";
 import Navbar from "./components/Navbar/Navbar";
-
+import Empty from './pages/Empty';
+import Directions from "./components/Directions/Directions";
 import './App.css';
 
 class App extends Component {
@@ -27,9 +28,12 @@ class App extends Component {
         <Auth>
         <div className="wrapper">
         <Navbar />
+
           <Route exact path="/" component={Login} />
           <Route exact path="/register" component={Register} />
-           <Route exact path="/map" component={Map} />
+          <Route exact path="/map" component={Map} />
+          <Route exact path="/directions" component={Directions} />
+          <Route exact path="/empty" component={Empty} />
            
            {/* <MatchWhenAuthorized path="/report" component={ReportForm} />  */}
         </div>

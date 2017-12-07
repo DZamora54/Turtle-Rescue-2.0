@@ -1,50 +1,53 @@
-import React, { Component } from "react";
+import React from "react";
+import { compose, withProps } from "recompose";
+import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps";
 
-let map;
-const google = window.google;
+const MyMapComponent = compose(
+  withProps({
+    googleMapURL: "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places",
+    loadingElement: <div style={{ height: `100%` }} />,
+    containerElement: <div style={{ height: `400px` }} />,
+    mapElement: <div style={{ height: `100%` }} />,
+  }),
+  withScriptjs,
+  withGoogleMap
+)((props) =>
+  <GoogleMap
+    defaultZoom={12}
+    defaultCenter={{ lat: 41.906, lng: -70.006 }}
+  >
+    {props.isMarkerShown && <Marker position={{ lat: 41.906, lng: -70.006 }} onClick={props.onMarkerClick} />}
+  </GoogleMap>
+);
 
-const Cape = {
-  lat: 41.710675,
-  lng: -70.274516
-};
+class Map extends React.PureComponent {
+  state = {
+    isMarkerShown: false,
+  }
 
-const Lighthouse = {
-  lat: 41.515359,
-  lng: -70.655529
-};
+  componentDidMount() {
+    this.delayedShowMarker()
+  }
 
-  class Map extends Component {
-    constructor() {
-      super();
-      this.panToCape = this.panToCape.bind(this);
-    }
+  delayedShowMarker = () => {
+    setTimeout(() => {
+      this.setState({ isMarkerShown: true })
+    }, 3000)
+  }
 
-    componentDidMount() {
-      this.map = new google.maps.Map(this.refs.map, {
-        center: Lighthouse,
-        zoom: 16
-      });
-    }
+  handleMarkerClick = () => {
+    this.setState({ isMarkerShown: false })
+    this.delayedShowMarker()
+  }
 
-    panToCape() {
-      this.map.panTo(Cape);
-    }
-
-    render() {
-      const mapStyle = {
-        width: 500,
-        height:300,
-        border: "1px solid black"
-      };
-    
-    
-    return(
-      <div>
-        <button onClick={this.panToCape}>Go to Cape</button>
-        <div ref="map" style={mapStyle}>I should be a map!</div>
-      </div>
+  render() {
+    return (
+      <MyMapComponent
+        isMarkerShown={this.state.isMarkerShown}
+        onMarkerClick={this.handleMarkerClick}
+      />
     )
   }
 }
 
-  export default Map;
+export default Map;
