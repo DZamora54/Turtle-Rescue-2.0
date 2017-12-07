@@ -7,9 +7,11 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Map from "./components/Map/Map";
 import Navbar from "./components/Navbar/Navbar";
+import Directions from "./components/Directions/Directions";
+import './App.css';
 import FormModal from "./components/FormModal/FormModal";
-
 import "./App.css";
+
 
 class App extends Component {
   //checking login for local storage
@@ -24,15 +26,16 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Router>
-          <Auth>
-            <div className="wrapper">
-              <Navbar />
-              <Route exact path="/" component={Login} />
-              <Route exact path="/register" component={Register} />
-              <Route exact path="/map" component={Map} />
+      <Router>
+        <Auth>
+        <div className="wrapper">
+        <Navbar />
 
-              {/* <MatchWhenAuthorized path="/report" component={ReportForm} />  */}
+          <Route exact path="/" component={Login} />
+          <Route exact path="/register" component={Register} />
+          <Route exact path="/map" component={Map} />
+          <Route exact path="/directions" component={Directions} />
+           {/* <MatchWhenAuthorized path="/report" component={ReportForm} />  */}
               <FormModal>{<p> Hello </p>}</FormModal>
             </div>
           </Auth>

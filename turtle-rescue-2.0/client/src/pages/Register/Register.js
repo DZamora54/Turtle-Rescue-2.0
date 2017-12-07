@@ -106,8 +106,8 @@ export class Register extends React.Component {
                 onChange={e => this.setState({userName: e.target.value})}
               />
               </label>
-              <FormBtn onClick={this.handleSubmit} type="submit">Register</FormBtn>
-              or <Link to="/Login">Back to Login</Link>
+              <Link to="/Map"><FormBtn onClick={this.handleSubmit} type="submit">Register</FormBtn></Link>
+              or <Link to="/">Back to Login</Link>
             </form>
           </div>
    
