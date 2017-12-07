@@ -1,1 +1,5 @@
-
+.tcard {
+  border-style: solid;
+  border-color: darkgreen;
+  width: 20%;
+}
