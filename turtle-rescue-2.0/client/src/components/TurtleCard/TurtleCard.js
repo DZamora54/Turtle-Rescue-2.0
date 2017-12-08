@@ -1,11 +1,10 @@
 import React from "react";
 import "./TurtleCard.css";
+import Map from "../Map/Map";
 
 const TurtleCard = () => (
   <div className="tcard">
-    <p>This is the turtle card</p>
-    <p>the map goes here</p>
-    <p>and the details go here</p>
+    <Map />
   </div>
 );
 
