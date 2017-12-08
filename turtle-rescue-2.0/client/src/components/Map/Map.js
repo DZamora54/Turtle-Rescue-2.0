@@ -1,6 +1,7 @@
 import React from "react";
 import { compose, withProps } from "recompose";
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps";
+import geolocated from "../Geolocation/Geolocation";
 
 const MyMapComponent = compose(
   withProps({
@@ -50,4 +51,4 @@ class Map extends React.PureComponent {
   }
 }
 
-export default Map;
+export default geolocated(Map);
