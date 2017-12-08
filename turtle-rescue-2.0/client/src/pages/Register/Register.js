@@ -6,12 +6,14 @@ import withAuth from "../../components/Auth/withAuth";
 
 
 
-export class Login extends React.Component {
+export class Register extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       email: '',
       password: '',
+      phoneNumber: '',
+      userName: '',
       redirectToReferrer: false,
       showErrors: false
     };
@@ -29,22 +31,26 @@ export class Login extends React.Component {
       showErrors: true
     });
     if (this.validateForm()) {
-      this.props.signInWithEmailAndPassword(this.state.email, this.state.password).then(() => {
-        this.setState({redirectToReferrer: true});
-      }).catch(err => {console.error(err)});
-    }
+      this.props.createAndSetUserWithEmailAndPassword(this.state.email, this.state.password).then(() => {
+        this.setState({redirestTorRefferer: true});
+      }).catch(err=> {console.error(err)});
+}
   }
+  
+  
 
   validateForm = () => {
     return (
       this.state.email.length > 0 &&
-      this.state.password.length > 0
+      this.state.password.length > 0 &&
+      this.state.phoneNumber.length > 0 &&
+      this.state.userName.length > 0
     );
    }
 
    handleSubmit = e => {
      e.preventDefault();
-     this.props.signInWithEmailAndPassword(this.state.email, this.state.password).then(() => {
+     this.props.createAndSetUserWithEmailAndPassword(this.state.email, this.state.password).then(() => {
       this.setState({redirectToReferrer: true});
     }).catch(err => {console.error(err)});
    };
@@ -76,11 +82,32 @@ export class Login extends React.Component {
                 errorText="Password is required"
                 // showError={showErrors && this.state.password.length <= 0}
                 onChange={e => this.setState({password: e.target.value})}
-                
               />
               </label>
-              <FormBtn onClick={this.handleSubmit} type="submit">Sign In</FormBtn>
-              or <Link to="/register">Create Account</Link>
+              <label>
+                Phone Number:
+              <Input
+                name="phoneNumber"
+                type="number"
+                value={this.state.value}
+                errorText="Phone Number is required"
+                // showError={showErrors && this.state.password.length <= 0}
+                onChange={e => this.setState({phoneNumber: e.target.value})}
+              />
+              </label>
+              <label>
+                Name:
+              <Input
+                name="userName"
+                type="text"
+                value={this.state.value}
+                errorText="Name is required"
+                // showError={showErrors && this.state.password.length <= 0}
+                onChange={e => this.setState({userName: e.target.value})}
+              />
+              </label>
+              <Link to="/Map"><FormBtn onClick={this.handleSubmit} type="submit">Register</FormBtn></Link>
+              or <Link to="/">Back to Login</Link>
             </form>
           </div>
    
@@ -88,4 +115,4 @@ export class Login extends React.Component {
   }
 }
 
-export default withAuth(Login);
+export default withAuth(Register);

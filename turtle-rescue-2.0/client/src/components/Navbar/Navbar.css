@@ -1,0 +1,20 @@
+#logo {
+  font-weight: 600;
+  letter-spacing: -3px;
+  margin: 0;
+}
+
+#logo span {
+  color: #fdd835;
+}
+
+#logo-icon {
+  display: initial;
+  font-size: 50px !important;
+  color: #fdd835;
+  vertical-align: bottom;
+}
+
+#counter {
+  font-weight: 600;
+}
