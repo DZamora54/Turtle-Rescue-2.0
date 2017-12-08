@@ -1,5 +1,4 @@
 module.exports = {
-    Turtle: require("./turtle"),
-    practiceTest: "does this work?"
-    //Users: require("./users.js")
-  };
+  Turtle: require("./turtle")
+  //Users: require("./users.js")
+};
