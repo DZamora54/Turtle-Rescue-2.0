@@ -1,19 +1,16 @@
 import React from "react";
 
-
-import TurtleCard from "../../components/TurtleCard/TurtleCard";
-import FormModal from "../../components/FormModal/FormModal";
 import NavbarAdmin from "../../components/NavbarAdmin/NavbarAdmin";
-import Geolocation from "../../components/Geolocation/Geolocation";
+import Directions from "../../components/Directions/Directions";
+import Directions2 from "../../components/Directions/Directions2";
 
 export class Admin extends React.Component {
   render() {
     return (
       <div>
         <NavbarAdmin />
-        <TurtleCard />
-        <Geolocation/>
-        <FormModal />
+        <Directions />
+        <Directions2 />
       </div>
     );
   }

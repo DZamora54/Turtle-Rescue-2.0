@@ -15,7 +15,7 @@ export default () => {
         getCurrentPosition
       }) =>
         <div>
-          <button onClick={getCurrentPosition}>Send Position</button>
+          <button className="col s12" onClick={getCurrentPosition}>Send Position</button>
           {error &&
             <div>
               {error.message}
