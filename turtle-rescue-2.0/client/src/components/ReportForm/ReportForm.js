@@ -15,7 +15,7 @@ const ReportForm = props => (
         className="materialize-textarea"
         value={props.comment}
       />
-      <label for="textarea1">Comment</label>
+      <label htmlFor="textarea1">Comment</label>
     </div>
     <input type="submit" value="Send" onClick={props.handleReportFormSubmit} />
   </form>

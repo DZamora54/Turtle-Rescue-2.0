@@ -2,6 +2,7 @@ import React from "react";
 import ReportForm from "../ReportForm/ReportForm";
 import "./FormModal.css";
 
+
 class FormModal extends React.Component {
   constructor() {
     super();

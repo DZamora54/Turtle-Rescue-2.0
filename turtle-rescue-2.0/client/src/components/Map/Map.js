@@ -2,9 +2,10 @@ import React from "react";
 import { compose, withProps } from "recompose";
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps";
 
+
 const MyMapComponent = compose(
   withProps({
-    googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyD9dj2ywbl2jTN_qw8JAtxgrB_y47OBfiEv=3.exp&libraries=geometry,drawing,places",
+    googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyD9dj2ywbl2jTN_qw8JAtxgrB_y47OBfiE&v=3.exp&libraries=geometry,drawing,places",
     loadingElement: <div style={{ height: `100%` }} />,
     containerElement: <div style={{ height: `400px` }} />,
     mapElement: <div style={{ height: `100%` }} />,
@@ -19,6 +20,7 @@ const MyMapComponent = compose(
     {props.isMarkerShown && <Marker position={{ lat: 41.906, lng: -70.006 }} onClick={props.onMarkerClick} />}
   </GoogleMap>
 );
+
 
 class Map extends React.PureComponent {
   state = {
