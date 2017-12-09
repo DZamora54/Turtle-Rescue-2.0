@@ -56,9 +56,9 @@ export class Login extends React.Component {
     return (
       <div id="page">
         <NavbarUser/>
-        <div id="FormContainer" class="center-align yellow darken-1">
+        <div id="FormContainer" className="center-align yellow darken-1">
           <form>
-            <label class="white-text">
+            <label className="grey-text">
               Email
             <Input
               name="email"
@@ -70,7 +70,7 @@ export class Login extends React.Component {
             />
             </label>
             <br />
-            <label class="white-text">
+            <label className="grey-text">
               Password
             <Input
               name="password"
@@ -82,8 +82,8 @@ export class Login extends React.Component {
               
             />
             </label>
-            <FormBtn id="form-btn" class="green" onClick={this.handleSubmit} type="submit">Sign In</FormBtn>
-            or <Link to="/register">Create Account</Link>
+            <FormBtn id="form-btn" onClick={this.handleSubmit} type="submit">LOG IN</FormBtn>
+            or <Link id="register" to="/register">Register</Link>
           </form>
         </div>
       </div>
