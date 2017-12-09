@@ -26,10 +26,7 @@ class App extends Component {
         <Router>
           <Auth>
             <div className="wrapper">
-<<<<<<< HEAD
-=======
               <Navbar />
->>>>>>> a5482ef4013a9eab09527b39e09dc67b2bcfd17c
               <Route exact path="/" component={Login} />
               <Route exact path="/register" component={Register} />
               <Route exact path="/user" component={User} />
