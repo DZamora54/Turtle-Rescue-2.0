@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link }from 'react-router-dom';
+import "./Login.css";
 
 import {FormBtn, Input} from "../../components/Form"
 import withAuth from "../../components/Auth/withAuth";
-
+import NavbarUser from "../../components/NavbarUser/NavbarUser";
 
 
 export class Login extends React.Component {
@@ -53,36 +54,39 @@ export class Login extends React.Component {
     console.log(this.props);
 
     return (
-      <div>
-            <form>
-              <label>
-                Email:
-              <Input
-                name="email"
-                type="text"
-                value={this.state.value}
-                errorText="Email is required"
-                // showError={showErrors && this.state.email.length <= 0}
-                onChange={e => this.setState({email: e.target.value})}
-              />
-              </label>
-              <br />
-              <label>
-                Password:
-              <Input
-                name="password"
-                type="password"
-                value={this.state.value}
-                errorText="Password is required"
-                // showError={showErrors && this.state.password.length <= 0}
-                onChange={e => this.setState({password: e.target.value})}
-                
-              />
-              </label>
-              <FormBtn onClick={this.handleSubmit} type="submit">Sign In</FormBtn>
-              or <Link to="/register">Create Account</Link>
-            </form>
-          </div>
+      <div id="page">
+        <NavbarUser/>
+        <div id="FormContainer" class="center-align yellow darken-1">
+          <form>
+            <label class="white-text">
+              Email
+            <Input
+              name="email"
+              type="text"
+              value={this.state.value}
+              errorText="Email is required"
+              // showError={showErrors && this.state.email.length <= 0}
+              onChange={e => this.setState({email: e.target.value})}
+            />
+            </label>
+            <br />
+            <label class="white-text">
+              Password
+            <Input
+              name="password"
+              type="password"
+              value={this.state.value}
+              errorText="Password is required"
+              // showError={showErrors && this.state.password.length <= 0}
+              onChange={e => this.setState({password: e.target.value})}
+              
+            />
+            </label>
+            <FormBtn id="form-btn" class="green" onClick={this.handleSubmit} type="submit">Sign In</FormBtn>
+            or <Link to="/register">Create Account</Link>
+          </form>
+        </div>
+      </div>
    
     );
   }
