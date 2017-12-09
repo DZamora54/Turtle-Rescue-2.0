@@ -7,7 +7,6 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import User from "./pages/User";
 import Admin from "./pages/Admin";
-import Navbar from "./components/Navbar/Navbar";
 import "./App.css";
 
 class App extends Component {
@@ -26,8 +25,6 @@ class App extends Component {
         <Router>
           <Auth>
             <div className="wrapper">
-              <Navbar />
-
               <Route exact path="/" component={Login} />
               <Route exact path="/register" component={Register} />
               <Route exact path="/user" component={User} />
