@@ -10,8 +10,9 @@ import Admin from "./pages/Admin";
 import Navbar from "./components/Navbar/Navbar";
 import "./App.css";
 
+
 class App extends Component {
-  //checking login for local storage
+  // checking login for local storage
   // state = {
   //   uid: null,
   //   user: null
@@ -27,11 +28,10 @@ class App extends Component {
           <Auth>
             <div className="wrapper">
               <Navbar />
-
               <Route exact path="/" component={Login} />
               <Route exact path="/register" component={Register} />
               <Route exact path="/user" component={User} />
-              <Route exact path="/admin" component={Admin} />
+              <Route exact path="/admin" component={Admin} />    
             </div>
           </Auth>
         </Router>
