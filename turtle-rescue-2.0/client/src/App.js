@@ -25,6 +25,7 @@ class App extends Component {
       <div className="App">
         <Router>
           <Auth>
+           
             <div className="wrapper">
               <Route exact path="/" component={Login} />
               <Route exact path="/register" component={Register} />
