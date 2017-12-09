@@ -54,9 +54,9 @@ export class Login extends React.Component {
     console.log(this.props);
 
     return (
-      <div id="page">
+      <div>
         <NavbarUser/>
-        <div id="FormContainer" className="center-align yellow darken-1">
+        <div id="form-container" className="center-align yellow darken-1">
           <form>
             <label className="grey-text">
               Email
