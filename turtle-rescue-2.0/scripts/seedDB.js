@@ -20,7 +20,7 @@ const turtleSeed = [
       state: "MA",
       coordinates: "42.466763, -70.949494",
       comments: "found near Long Beach",
-      userName: "Charles",
+      name: "Charles",
       phoneNumber: "555-555-5555"
   }
 ];
