@@ -1,14 +1,18 @@
 const router = require("express").Router();
 const turtlesController = require("../../controllers/turtlesController");
-// Matches with "/api/turtles"
+const isAuthenticated = require("../../config/middleware/isAuthenticated");
+// // Matches with "/api/turtles"
 router
   .route("/")
-  .get(turtlesController.findAll)
+  .get(isAuthenticated, turtlesController.findAll)
   .post(turtlesController.create);
 // Matches with "/api/turtles/:id"
 router
   .route("/:id")
-  .get(turtlesController.findById)
+  .get(isAuthenticated, turtlesController.findById)
   .put(turtlesController.update)
   .delete(turtlesController.remove);
+module.exports = router;
+
+
 module.exports = router;

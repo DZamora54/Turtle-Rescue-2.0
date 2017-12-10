@@ -22,6 +22,9 @@ mongoose.connect(
     useMongoClient: true
   }
 );
+
+module.exports = {
+create: function(req, res) {
 db.User
 .create({ name: "Turtle Admin" })
 .then(function(dbUser) {
@@ -36,4 +39,4 @@ db.User
 // Start the API server
 app.listen(PORT, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
-});
+});;}}

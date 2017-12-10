@@ -10,7 +10,7 @@ const turtleSchema = new Schema({
     // Function takes in the new `longstring` value to be saved as an argument
     function(input) {
       // If this returns true, proceed. If not, return the error message below
-      return input.length >= 6;
+      return input.length >= 15;
     },
     // Error Message
     "Subject description should be longer."

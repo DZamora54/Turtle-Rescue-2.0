@@ -2,6 +2,7 @@ import React from "react";
 import { compose, withProps, lifecycle } from "recompose";
 import { withScriptjs, withGoogleMap, GoogleMap, DirectionsRenderer } from "react-google-maps";
 
+
 const google = window.google;
 
 const Directions = compose(
@@ -15,8 +16,22 @@ const Directions = compose(
   withGoogleMap,
   lifecycle({
     componentDidMount() {
+
       const DirectionsService = new google.maps.DirectionsService();
 
+      // if (this.props.origin) {
+      //   if (navigator && navigator.geolocation) {
+      //       navigator.geolocation.getCurrentPosition((pos) => {
+      //           const coords = pos.coords;
+      //           this.setState({
+      //               currentLocation: {
+      //                   lat: coords.latitude,
+      //                   lng: coords.longitude
+      //               }
+      //             })
+      //           }
+              
+            
       DirectionsService.route({
         origin: new google.maps.LatLng(41.733, -70.222),
         destination: new google.maps.LatLng(41.906, -70.006),

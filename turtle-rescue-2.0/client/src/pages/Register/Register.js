@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link }from 'react-router-dom';
+import "./Register.css";
 
 import {FormBtn, Input} from "../../components/Form"
 import withAuth from "../../components/Auth/withAuth";
-
+import NavbarUser from "../../components/NavbarUser/NavbarUser";
 
 
 export class Register extends React.Component {
@@ -60,57 +61,59 @@ export class Register extends React.Component {
 
     return (
       <div>
-            <form>
-              <label>
-                Email:
-              <Input
-                name="email"
-                type="text"
-                value={this.state.value}
-                errorText="Email is required"
-                // showError={showErrors && this.state.email.length <= 0}
-                onChange={e => this.setState({email: e.target.value})}
-              />
-              </label>
-              <br />
-              <label>
-                Password:
-              <Input
-                name="password"
-                type="password"
-                value={this.state.value}
-                errorText="Password is required"
-                // showError={showErrors && this.state.password.length <= 0}
-                onChange={e => this.setState({password: e.target.value})}
-              />
-              </label>
-              <label>
-                Phone Number:
-              <Input
-                name="phoneNumber"
-                type="number"
-                value={this.state.value}
-                errorText="Phone Number is required"
-                // showError={showErrors && this.state.password.length <= 0}
-                onChange={e => this.setState({phoneNumber: e.target.value})}
-              />
-              </label>
-              <label>
-                Name:
-              <Input
-                name="userName"
-                type="text"
-                value={this.state.value}
-                errorText="Name is required"
-                // showError={showErrors && this.state.password.length <= 0}
-                onChange={e => this.setState({userName: e.target.value})}
-              />
-              </label>
-              <Link to="/Map"><FormBtn onClick={this.handleSubmit} type="submit">Register</FormBtn></Link>
-              or <Link to="/">Back to Login</Link>
-            </form>
+        <NavbarUser/>
+        <div id="form-container" class="yellow darken-1">
+          <form>
+            <label>
+              Email
+            <Input
+              name="email"
+              type="text"
+              value={this.state.value}
+              errorText="Email is required"
+              // showError={showErrors && this.state.email.length <= 0}
+              onChange={e => this.setState({email: e.target.value})}
+            />
+            </label>
+            <br />
+            <label>
+              Password
+            <Input
+              name="password"
+              type="password"
+              value={this.state.value}
+              errorText="Password is required"
+              // showError={showErrors && this.state.password.length <= 0}
+              onChange={e => this.setState({password: e.target.value})}
+            />
+            </label>
+            <label>
+              Phone Number
+            <Input
+              name="phoneNumber"
+              type="number"
+              value={this.state.value}
+              errorText="Phone Number is required"
+              // showError={showErrors && this.state.password.length <= 0}
+              onChange={e => this.setState({phoneNumber: e.target.value})}
+            />
+            </label>
+            <label>
+              Name
+            <Input
+              name="userName"
+              type="text"
+              value={this.state.value}
+              errorText="Name is required"
+              // showError={showErrors && this.state.password.length <= 0}
+              onChange={e => this.setState({userName: e.target.value})}
+            />
+            </label>
+            <Link to="/Map"><FormBtn onClick={this.handleSubmit} type="submit" id="form-btn">Register</FormBtn></Link>
+            <Link to="/" id="back">Back</Link>
+          </form>
           </div>
-   
+      </div>
     );
   }
 }
